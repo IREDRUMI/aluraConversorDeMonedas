@@ -25,10 +25,12 @@ public class pruebas {
 
 
         monedaExchageApi datos  = gson.fromJson(nuevaConexion.getJson(), monedaExchageApi.class);
-        System.out.println(datos.rates().get("MXN"));
+        System.out.println(datos);
 
         conversionMoneda conversion = new conversionMoneda(datos);
-        System.out.println(conversion);
+
+
+        System.out.println(conversion.calculoConversionMoneda("MXN",23,1 ));
 
         //monedaExchageApi conversionMoneda1 =  gson.fromJson(nuevaConexion.getJson(),monedaExchageApi.class);
 

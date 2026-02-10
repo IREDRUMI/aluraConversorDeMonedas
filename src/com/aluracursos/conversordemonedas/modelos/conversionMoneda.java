@@ -11,6 +11,7 @@ public class conversionMoneda{
     private double codigoMonedaAConvertir;
     private double valorMonedaAConvertir;
     Map<String, Double> rates;
+    private double calculo;
 
 
         public conversionMoneda(monedaExchageApi miMonedaExchangeApi) throws IOException, InterruptedException {
@@ -19,7 +20,13 @@ public class conversionMoneda{
             this.monedaBase = miMonedaExchangeApi.baseCode();
         }
 
-        public  {}
+        public double calculoConversionMoneda(String moneda, double cantidad , int opcion){
+                if (opcion%2 == 1){
+                    return this.rates.get(moneda) * cantidad;
+                } else  {
+                    return cantidad / this.rates.get(moneda);
+                }
+        }
 
 
    @Override
