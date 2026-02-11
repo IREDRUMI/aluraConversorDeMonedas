@@ -64,7 +64,15 @@ public class principal {
             }
             System.out.println("Ingrese el valor que desea convertir");
             double cantidad = teclado.nextDouble();
-            System.out.println(conversion.calculoConversionMoneda(tipoMoneda,cantidad, opcion));
+            //System.out.println(conversion.calculoConversionMoneda(tipoMoneda,cantidad, opcion));
+
+            if (opcion%2 == 1) {
+                System.out.println("El valor de " + cantidad + " [USD] corresponde al valor final de =>>> "
+                        + conversion.calculoConversionMoneda(tipoMoneda,cantidad, opcion) + " [" + tipoMoneda + "]");
+            } else {
+                System.out.println("El valor de " + cantidad + " [" + tipoMoneda + "]" + " corresponde al valor final de =>>> "
+                        + conversion.calculoConversionMoneda(tipoMoneda,cantidad, opcion) + " [USD]");
+            }
 
         }
 
